@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# For backward compatibilty with Rails 3 attr_accessible
+# gem 'protected_attributes '
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -42,11 +45,25 @@ group :development, :test do
 end
 
 group :test do
+  # https://github.com/thoughtbot/shoulda-matchers
+  # gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '2.8.0'
+  # https://github.com/beatrichartz/shoulda-callback-matchers
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+  # https://github.com/stympy/faker
   gem 'faker', '~> 1.4.3'
-#  gem 'capybara', '~> 2.4.3'
-#  gem 'database_cleaner', '~> 1.3.0'
-#  gem 'launchy', '~> 2.4.2'
-#  gem 'selenium-webdriver', '~> 2.43.0'
+  # Database Cleaner is a set of strategies for cleaning your database in Ruby.
+  # The original use case was to ensure a clean state during tests.
+  # Each strategy is a small amount of code but is code that is usually needed
+  # in any ruby app that is testing with a database.
+  # https://github.com/DatabaseCleaner/database_cleaner
+  gem 'database_cleaner', '~> 1.3.0'
+
+  #  gem 'capybara', '~> 2.4.3'
+  #  gem 'database_cleaner', '~> 1.3.0'
+  #  gem 'launchy', '~> 2.4.2'
+  #  gem 'selenium-webdriver', '~> 2.43.0'
+
 end
 
 group :development do
