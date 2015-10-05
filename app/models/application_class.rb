@@ -8,4 +8,12 @@ class ApplicationClass < ActiveRecord::Base
   validates_associated :permissions
   validates_associated :operations
 
+  def class_operations
+    parray = []
+    operations.order(:sequence).each do |operation|
+      parray << operation.name.to_sym
+    end
+    parray
+  end
+
 end

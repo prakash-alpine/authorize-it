@@ -44,10 +44,12 @@ ActiveRecord::Schema.define(version: 20151005134337) do
   add_index "application_objects", ["user_id"], name: "index_application_objects_on_user_id", using: :btree
 
   create_table "application_scopes", force: :cascade do |t|
-    t.string   "name",        null: false
+    t.string   "name",              null: false
+    t.integer  "parent_class_id"
+    t.string   "parent_class_name"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "group_id"
   end
 
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 20151005134337) do
   create_table "operations", force: :cascade do |t|
     t.string   "name",                 null: false
     t.text     "description"
+    t.integer  "sequence"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "application_class_id"
@@ -141,5 +144,6 @@ ActiveRecord::Schema.define(version: 20151005134337) do
   add_foreign_key "application_objects", "users"
   add_foreign_key "application_scopes", "groups"
   add_foreign_key "operations", "application_classes"
+  add_foreign_key "permissions", "application_classes"
   add_foreign_key "permissions", "roles"
 end

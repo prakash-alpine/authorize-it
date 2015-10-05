@@ -2,6 +2,8 @@ class CreateApplicationScopes < ActiveRecord::Migration
   def change
     create_table :application_scopes do |t|
       t.string :name, :null => false
+      t.integer :parent_class_id
+      t.string  :parent_class_name
       t.text   :description
       t.timestamps null: false
     end

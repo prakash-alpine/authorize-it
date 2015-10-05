@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_length_of :notes, :maximum => 4096
 
   has_and_belongs_to_many :groups, -> { uniq }
+  has_and_belongs_to_many :roles, -> { uniq }
   has_many :application_objects
 
 end

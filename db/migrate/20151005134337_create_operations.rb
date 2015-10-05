@@ -3,6 +3,7 @@ class CreateOperations < ActiveRecord::Migration
     create_table :operations do |t|
       t.string  :name, :null => false
       t.text    :description
+      t.integer :sequence
       t.timestamps null: false
     end
     add_reference :operations, :application_class, :index => true
