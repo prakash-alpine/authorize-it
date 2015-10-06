@@ -1,0 +1,2 @@
+module AuthorizeIt::PermissionsHelper
+end

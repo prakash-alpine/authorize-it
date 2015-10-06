@@ -1,0 +1,2 @@
+module AuthorizeIt::AdminHelper
+end

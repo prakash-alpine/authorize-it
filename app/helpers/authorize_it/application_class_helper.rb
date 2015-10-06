@@ -1,0 +1,2 @@
+module AuthorizeIt::ApplicationClassHelper
+end

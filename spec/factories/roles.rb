@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :role do
-    name 'default_role'
+    name {Faker::Lorem.characters(15)}
     description {Faker::Lorem.sentence}
 
     factory :user_role do

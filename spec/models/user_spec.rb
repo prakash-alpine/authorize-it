@@ -1,6 +1,5 @@
 require 'rails_helper'
 require 'shoulda-matchers'
-include Shoulda::Matchers::ActiveRecord
 
 RSpec.describe User do
 
@@ -39,7 +38,10 @@ RSpec.describe User do
   end
 
   it 'allows digits  _ and - in username' do
-    expect(FactoryGirl.build(:user, username: 'john_doe-100')).to be_valid
+    expect(FactoryGirl.create(:user, username: 'john_doe-100')).to be_valid
+  end
+  it 'does not allow name with special chars' do
+    expect(FactoryGirl.build(:user, username: 'pra%kash@)!@#')).not_to be_valid
   end
 
   it 'does not allow special chars in user name' do

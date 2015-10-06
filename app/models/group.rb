@@ -1,6 +1,6 @@
 class Group < ActiveRecord::Base
   validates_presence_of :name
-  validates_format_of :name, :with => /\A[a-z0-9_-]{8,25}\z/
+  validates_format_of :name, :with => /\A[a-z0-9_-]{4,25}\z/
   validates_length_of :name, :maximum => 25
   validates_length_of :description, :maximum => 256
   validates_uniqueness_of :name

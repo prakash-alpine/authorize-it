@@ -1,0 +1,2 @@
+module AuthorizeIt::OperationsHelper
+end

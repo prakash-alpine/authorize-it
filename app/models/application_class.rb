@@ -1,5 +1,9 @@
 class ApplicationClass < ActiveRecord::Base
 
+  validates_presence_of  :name
+  validates_format_of :name, :with => /\A[a-z0-9_-]\z/
+  validates_length_of :name, :maximum => 255
+
   has_many :permissions, :dependent => :destroy
   has_many :application_objects, dependent: :destroy
   has_many :operations, :dependent => :destroy
@@ -9,11 +13,37 @@ class ApplicationClass < ActiveRecord::Base
   validates_associated :operations
 
   def class_operations
-    parray = []
+    ret = []
     operations.order(:sequence).each do |operation|
-      parray << operation.name.to_sym
+      ret << operation.name.to_sym
     end
-    parray
+    ret
+  end
+
+  def permissions_for(role_name)
+    role = Role.find_by(:name => role_name)
+    ret = Set.new
+    if role == nil
+      #raise exception
+      return nil
+    else
+      perm_obj = role.permissions.where(:application_class_id => self.id).first
+      if perm_obj == nil
+        #raise exception
+        return nil
+      else
+        operations = class_operations
+        bits = perm_obj.permissions_mask
+        bit_length = bits.size * 8
+        bit_length.times do |i|
+          ret.add(operations[i].to_sym) if bits[i] == 1
+        end
+
+      end
+
+    end
+
+    ret.to_a
   end
 
 end

@@ -13,7 +13,9 @@ RSpec.describe Role do
   it 'does not allow names longer than 25 chars' do
     expect(FactoryGirl.build(:role, name: 'dffkdfkfffdkfkdjkjfkdjkffkkfjkfejrjkfkdfkelrkelkfkkejlrekfkd')).not_to be_valid
   end
-
+  it 'allows digits  _ and - in username' do
+    expect(FactoryGirl.create(:role, name: 'john_doe-100')).to be_valid
+  end
   it 'does not allow name with special chars' do
     expect(FactoryGirl.build(:role, name: 'pra%kash@)!@#')).not_to be_valid
   end
