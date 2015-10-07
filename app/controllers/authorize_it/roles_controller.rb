@@ -1,5 +1,5 @@
 class AuthorizeIt::RolesController < ApplicationController
-  layout 'authorize_it/admin_lte_2'
+
 
   respond_to :html, :js, :json
 

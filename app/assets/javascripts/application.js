@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require_tree .
+// add index.js from vendor/assets/javascripts folder
+//= require index
