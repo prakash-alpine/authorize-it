@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :group do
-    name 'default_group'
+    name {Faker::Lorem.characters(15)}
     description {Faker::Lorem.sentence}
 
     factory :group_with_3_users do

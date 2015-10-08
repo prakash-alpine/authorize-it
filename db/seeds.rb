@@ -13,7 +13,7 @@ User.where(:first_name => 'Application', :last_name => 'User', :username => 'app
 
 puts ''
 puts '---- Adding Roles ----'
-admin_role = Role.find_or_create_by(:name => 'admin_lte'.camelize)
+admin_role = Role.find_or_create_by(:name => 'admin'.camelize)
 owner_role = Role.find_or_create_by(:name => 'owner'.camelize)
 user_role = Role.find_or_create_by(:name => 'user'.camelize)
 developer_role = Role.find_or_create_by(:name => 'developer'.camelize)
@@ -54,14 +54,14 @@ default_group.application_scope = default_scope
 # add sample application classes
 application_classes =  [
     {:name => 'activity'.camelize},
-    {:name => 'Application_scope'.camelize},
+    {:name => 'application_scope'.camelize},
     {:name => 'account'.camelize},
     {:name => 'workfile'.camelize},
     {:name => 'data_source'.camelize},
     {:name => 'comment'.camelize},
     {:name => 'task'.camelize},
     {:name => 'user'.camelize},
-    {:name => 'Group'.camelize},
+    {:name => 'group'.camelize},
     {:name => 'role'.camelize},
     {:name => 'sandbox'.camelize},
     {:name => 'note'.camelize},

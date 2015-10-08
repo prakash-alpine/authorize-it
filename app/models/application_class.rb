@@ -1,7 +1,7 @@
 class ApplicationClass < ActiveRecord::Base
 
-  validates_presence_of  :name
-  validates_format_of :name, :with => /\A[a-z0-9_-]\z/
+  validates_presence_of  :name, :message => 'Class name can not be empty'
+#  validates_format_of :name, :with => /\A[A-Za-z0-9_-]{4,25}\z/, :message => 'Class name can not contain special chars'
   validates_length_of :name, :maximum => 255
 
   has_many :permissions, :dependent => :destroy

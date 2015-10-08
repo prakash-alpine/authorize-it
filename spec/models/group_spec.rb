@@ -39,7 +39,10 @@ RSpec.describe Group do
   # end
 
   # not working
-  it {should have_and_belongs_to_many(:users)}
+  describe 'Associations' do
+    it { should have_and_belong_to_many(:users) }
+    it { should have_one(:scope) }
+  end
 
 
 end

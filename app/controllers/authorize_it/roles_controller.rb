@@ -1,6 +1,5 @@
 class AuthorizeIt::RolesController < ApplicationController
 
-
   respond_to :html, :js, :json
 
   def index

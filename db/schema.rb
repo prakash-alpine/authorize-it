@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 20151005134337) do
     t.string   "department"
     t.text     "notes"
     t.string   "password_digest"
-    t.boolean  "admin_lte",              default: false
+    t.boolean  "admin",              default: false
     t.datetime "deleted_at"
     t.string   "image_file_path"
     t.string   "image_content_type"

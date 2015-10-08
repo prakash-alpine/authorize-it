@@ -1,6 +1,6 @@
 class ApplicationScope < ActiveRecord::Base
 
-  validates_presence_of :name
+  validates_presence_of :name, :message => 'scope name can not be empty'
   #validates_format_of   :name, :with => /\A[a-z0-9_-]\z/
   validates_length_of   :name, :maximum => 256
 
