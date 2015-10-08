@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :department
       t.text   :notes
       t.string :password_digest
-      t.boolean  :admin, :default => false
+      t.boolean  :admin_lte, :default => false
       t.timestamp :deleted_at
       t.string :image_file_path
       t.string :image_content_type

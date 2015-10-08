@@ -13,7 +13,7 @@ User.where(:first_name => 'Application', :last_name => 'User', :username => 'app
 
 puts ''
 puts '---- Adding Roles ----'
-admin_role = Role.find_or_create_by(:name => 'admin'.camelize)
+admin_role = Role.find_or_create_by(:name => 'admin_lte'.camelize)
 owner_role = Role.find_or_create_by(:name => 'owner'.camelize)
 user_role = Role.find_or_create_by(:name => 'user'.camelize)
 developer_role = Role.find_or_create_by(:name => 'developer'.camelize)

@@ -1,8 +1,8 @@
-//= require admin/bootstrap.min
-//= require admin/less.min
-//= require admin/jquery.slimscroll.min
-//= require admin/adminLTE
-//= require admin/toastr.min
+//= require admin_lte/bootstrap.min
+//= require admin_lte/less.min
+//= require admin_lte/jquery.slimscroll.min
+//= require admin_lte/admin_lte.js
+//= require admin_lte/toastr.min
 
-// require admin/bootstrap-dialog.min
+// require admin_lte/bootstrap-dialog.min
 
