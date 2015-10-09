@@ -13,7 +13,7 @@
  *= require_self
  * load index.css from vendor/assets/stylesheets folder
  *= require index.css
- *= require_tree .
+ * require_tree .
  */
 
 .main-header a {

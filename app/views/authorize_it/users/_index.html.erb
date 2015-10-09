@@ -1,0 +1,59 @@
+<% content_for('users_table') do %>
+    <tr>
+      <td>Trident</td>
+      <td>Internet
+        Explorer 4.0
+      </td>
+      <td>Win 95+</td>
+      <td> 4</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Trident</td>
+      <td>Internet
+        Explorer 5.0
+      </td>
+      <td>Win 95+</td>
+      <td>5</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <td>Trident</td>
+      <td>Internet
+        Explorer 5.5
+      </td>
+      <td>Win 95+</td>
+      <td>5.5</td>
+      <td>A</td>
+    </tr>
+<% end %>
+
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Users</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table id="users_table" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Department</th>
+            </tr>
+            </thead>
+            <tbody>
+                <%= yield 'users_table' %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

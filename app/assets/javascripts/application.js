@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require admin_lte/JQuery/jQuery-2.1.4.min
 //= require jquery_ujs
-// require turbolinks
-//= require_tree .
+//= require turbolinks
+// require_tree .
 // add index.js from vendor/assets/javascripts folder
 //= require index
+//= require authorize_it/init
+

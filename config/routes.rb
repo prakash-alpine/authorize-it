@@ -1,14 +1,27 @@
 Rails.application.routes.draw do
 
+  get 'users/create'
+
+  get 'users/update'
+
+  get 'users/new'
+
+  get 'users/destroy'
+
+  get 'users/index'
+
+  get 'users/show'
+
   namespace :authorize_it do
     resources :operations
     resources :application_class
     resources :permissions
     resources :roles
     resources :groups
+    resources :users
   end
 
-  root 'authorize_it/admin#index'
+  root 'authorize_it/users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
