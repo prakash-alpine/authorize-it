@@ -10,29 +10,59 @@
         <%= form_for @user, url: '/authorize_it/users', id: 'new_user_form', method: 'POST', 'data-toggle': 'validator', role: 'form', remote: true do |f| %>
         <div class='modal-body'>
           <div class='box-body'>
-            <div class='form-group has-feedback'>
-              <label for=''>First Name</label>
-              <%= f.text_field :first_name, class: 'form-control',  placeholder: 'First Name', 'data-error':'Enter your first name.', required: true%>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <span class="help-block with-errors">Hey look, this one has feedback icons!</span>
+            <div class="row">
+              <div class = 'col-sm-6'>
+                <div class='form-group has-feedback'>
+                  <label for=''>First Name</label>
+                  <%= f.text_field :first_name, class: 'form-control',  placeholder: 'First Name', 'data-error':'Enter your first name.', required: true%>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">Hey look, this one has feedback icons!</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class='form-group has-feedback'>
+                  <label for=''>Last Name</label>
+                  <%= f.text_field :last_name, class: 'form-control' , size: '3x6', 'data-error':'Last name is required.', required: true %>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
             </div>
-            <div class='form-group has-feedback'>
-              <label for=''>Last Name</label>
-              <%= f.text_field :last_name, class: 'form-control' , size: '3x6', 'data-error':'Last name is required.', required: true %>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
+            <div class="row">
+              <div class = 'col-sm-6'>
+                <div class='form-group has-feedback'>
+                  <label for=''>Username</label>
+                  <%= f.text_field :username, class: 'form-control' , 'data-minlength': '6', 'data-error':'username is required.',required: true %>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">Minimum of 6 characters</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class='form-group has-feedback'>
+                  <label for=''>Email</label>
+                  <%= f.email_field :email, class: 'form-control', 'data-error':'Please enter valid email address', required: true %>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
             </div>
-            <div class='form-group has-feedback'>
-              <label for=''>Username</label>
-              <%= f.text_field :username, class: 'form-control' , 'data-minlength': '6', size: '3x6', 'data-error':'username is required.',required: true %>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <span class="help-block">Minimum of 6 characters</span>
-            </div>
-            <div class='form-group has-feedback'>
-              <label for=''>Email</label>
-              <%= f.email_field :email, class: 'form-control' , size: '3x6', 'data-error':'Please enter valid email address', required: true %>
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-              <div class="help-block with-errors"></div>
+            <div class="row">
+              <div class = 'col-sm-6'>
+                <div class='form-group has-feedback'>
+                  <label for=''>Password</label>
+                  <%= f.password_field :password, class: 'form-control' , 'data-minlength': '8', placeholder: 'Password', size: '3x6', 'data-error':'password is required.',required: true %>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">Minimum of 8 characters</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class='form-group has-feedback'>
+                  <label for=''>Confirm Password</label>
+                  <%= f.password_field :password, id:'passwordConfirm', class: 'form-control' , 'data-minlength': '8', placeholder: 'Confirm password', size: '3x6', 'data-match':'#user_password', 'data-match-error':'password do not match', required: true %>
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <span class="help-block with-errors">Minimum of 8 characters</span>
+                </div>
+              </div>
             </div>
             <div class='form-group has-feedback'>
               <label for=''>Department</label>
@@ -43,7 +73,7 @@
         </div>
         <div class='modal-footer'>
            <button type='button' class='btn btn-info pull-left' data-dismiss='modal'>Cancel</button>
-           <%= f.submit 'Add User' , class: 'btn btn-primary' %>
+           <%= f.submit 'Submit' , class: 'btn btn-primary' %>
         </div>
         <% end %>
       </div><!-- /.modal-content -->
