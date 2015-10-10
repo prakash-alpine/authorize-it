@@ -27,6 +27,7 @@
       <div class="content-wrapper">
         <%= yield %>
       </div>
+      <div id="modalBox"></div>
       <!-- /.content-wrapper -->
       <%= render partial: 'layouts/authorize_it/footer' %>
       <%= render partial: 'layouts/authorize_it/control_sidebar' %>
@@ -37,7 +38,6 @@
 
     <!-- ./wrapper -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <!-- <script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script> -->
 </body>
 </html>
 
