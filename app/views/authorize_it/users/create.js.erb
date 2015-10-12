@@ -1,0 +1,3 @@
+toastr.success('New user has been added successfully');
+$('#newUser').modal('hide');
+$('#users_table tr:last').after('<%= escape_javascript(render 'table_row', :user => @user) %>');

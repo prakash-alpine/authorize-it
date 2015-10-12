@@ -10,8 +10,14 @@ class AuthorizeIt::UsersController < ApplicationController
 
 
   def create
-    @user = User.create!(params[:user])
-    respond_with()
+    user_params = params[:user]
+    @user = User.create(:first_name => user_params['first_name'], :last_name => user_params['last_name'], :username => user_params['username'], :email => user_params['email'])
+    #byebug
+    if @user.errors.any?
+      render 'user_errors'
+    else
+      render 'create'
+    end
   end
 
   def update

@@ -1,14 +1,3 @@
-<% content_for('users_table') do %>
-    <% @users.each do |user| %>
-    <tr>
-      <td><%= user.first_name %></td>
-      <td><%= user.last_name %></td>
-      <td><%= user.username %></td>
-      <td><%= user.email %></td>
-      <td><%= user.department %></td>
-    </tr>
-    <% end %>
-<% end %>
 
 <section class="content">
   <div class="row">
@@ -33,10 +22,11 @@
               <th>Username</th>
               <th>Email</th>
               <th>Department</th>
+              <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-                <%= yield 'users_table' %>
+                <%= render partial: 'table_row' , collection: @users , as: :user %>
             </tbody>
           </table>
 
