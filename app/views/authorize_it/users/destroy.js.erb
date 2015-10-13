@@ -2,6 +2,15 @@ toastr.success('User <%= @user.username %> has been deleted successfully');
 $('#deleteUser').modal('hide');
 $('#table_content').html('<%= escape_javascript(render 'table', :users => @users) %>');
 $('#users_table').DataTable({
+    "ajax": "/authorize_it/users.json",
+    "columns": [
+        { "data": "first_name" },
+        { "data": "last_name" },
+        { "data": "username" },
+        { "data": "email" },
+        { "data": "department" },
+        { "data": "actions" }
+    ],
     "paging": true,
     "lengthChange": false,
     "searching": true,
@@ -9,3 +18,4 @@ $('#users_table').DataTable({
     "info": true,
     "autoWidth": false
 });
+
