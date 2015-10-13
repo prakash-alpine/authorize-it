@@ -1,25 +1,29 @@
 Rails.application.routes.draw do
 
-  get 'users/create'
-
-  get 'users/update'
-
-  get 'users/new'
-
-  get 'users/destroy'
-
-  get 'users/index'
-
-  get 'users/show'
-
   namespace :authorize_it do
-    resources :operations
-    resources :application_class
-    resources :permissions
-    resources :roles
-    resources :groups
-    resources :users
+    resources :operations do
+      get 'delete', on: :member
+    end
+    resources :application_class do
+      get 'delete', on: :member
+    end
+    resources :application_scope do
+      get 'delete', on: :member
+    end
+    resources :permissions do
+      get 'delete', on: :member
+    end
+    resources :roles do
+      get 'delete', on: :member
+    end
+    resources :groups do
+      get 'delete', on: :member
+    end
+    resources :users do
+      get 'delete', on: :member
+    end
   end
+
 
   root 'authorize_it/users#index'
 

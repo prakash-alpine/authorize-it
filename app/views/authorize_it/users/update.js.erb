@@ -1,0 +1,12 @@
+toastr.success('User data is updated successfully');
+$('#editUser').modal('hide');
+$('#table_content').html('<%= escape_javascript(render 'table', :users => @users) %>');
+$('#users_table').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false
+});
+

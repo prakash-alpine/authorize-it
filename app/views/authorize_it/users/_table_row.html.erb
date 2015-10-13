@@ -7,12 +7,12 @@
   <td>
     <div class='row'>
       <div class="col-sm-2">
-        <%= link_to edit_authorize_it_user_path(user), :title => 'Edir User', :remote => true do %>
+        <%= link_to edit_authorize_it_user_path(user), :title => 'Edit User', :remote => true do %>
             <i class="fa fa-lg fa-pencil"></i>
         <% end %>
       </div>
       <div class="col-sm-2">
-        <%= link_to "/authorize_it/users/#{user.id}", :method => 'DELETE', :title => 'Edir User', :remote => true do %>
+        <%= link_to delete_authorize_it_user_path(user), :title => 'Delete User', :remote => true do %>
             <i class="fa fa-lg fa-minus-square"></i>
         <% end %>
       </div>

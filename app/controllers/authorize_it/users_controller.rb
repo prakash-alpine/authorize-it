@@ -23,6 +23,9 @@ class AuthorizeIt::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update!(user_params)
+    @limit = params[:limit] == nil? ? 10 : params[:limit]
+    @offset = params[:offset] == nil? ? 0 : params[:offset]
+    @users = User.limit(@limit).offset(@offset).order('created_at DESC')
     respond_with()
   end
 
@@ -41,11 +44,22 @@ class AuthorizeIt::UsersController < ApplicationController
     respond_with()
   end
 
+  def delete
+    @user = User.find(params[:id])
+    respond_with()
+  end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy unless @user.nil?
-    respond_with()
+    if @user.errors.any?
+      # display error messages
+    else
+      @limit = params[:limit] == nil? ? 10 : params[:limit]
+      @offset = params[:offset] == nil? ? 0 : params[:offset]
+      @users = User.limit(@limit).offset(@offset).order('created_at DESC')
+      respond_with()
+    end
   end
 
   private

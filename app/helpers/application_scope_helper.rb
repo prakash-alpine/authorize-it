@@ -1,0 +1,2 @@
+module ApplicationScopeHelper
+end
