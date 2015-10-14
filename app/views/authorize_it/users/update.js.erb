@@ -12,10 +12,13 @@ $('#users_table').DataTable({
         { "data": "actions" }
     ],
     "paging": true,
+    "bServerSide": true,
+    "sServerMethod": "GET",
     "lengthChange": false,
     "searching": true,
     "ordering": true,
     "info": true,
-    "autoWidth": false
+    "autoWidth": false,
+    "iDisplayLength": 10
 });
 

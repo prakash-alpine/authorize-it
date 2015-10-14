@@ -7,4 +7,6 @@
 //= require admin_lte/datatables/dataTables.bootstrap.min
 //= require admin_lte/bootstrap-validator/validator
 //= require admin_lte/toastr/toastr.min
+//= require admin_lte/icheck/icheck.min
+//= require admin_lte/select2/select2.full.min
 
