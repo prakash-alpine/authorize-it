@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: permissions
+#
+#  id                   :integer          not null, primary key
+#  permissions_mask     :integer          not null
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  role_id              :integer
+#  application_class_id :integer
+#
+
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do

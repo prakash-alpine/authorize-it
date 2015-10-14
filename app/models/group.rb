@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: groups
+#
+#  id          :integer          not null, primary key
+#  name        :string           not null
+#  description :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Group < ActiveRecord::Base
   validates_presence_of :name
   validates_format_of :name, :with => /\A[a-z0-9_-]{4,25}\z/

@@ -46,6 +46,9 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'factory_girl_rails', '~> 4.4.1'
+  # Add a comment summarizing the current schema to the top or bottom of each of your model, fixtures, tests and specs
+  # https://github.com/ctran/annotate_models
+  gem 'annotate'
 end
 
 group :test do
