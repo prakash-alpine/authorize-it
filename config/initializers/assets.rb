@@ -11,6 +11,6 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
-#Rails.application.config.assets.precompile += %w( login.js footer.js login.css dashboard.js dashboard.css)
+Rails.application.config.assets.precompile += %w(admin.js admin.css)
 Rails.application.config.assets.precompile += %w(*.gif *.png *.jpg *.jpeg *.gif *.ttf *.eot *.svg *.woff)
 Rails.application.config.assets.version = '1.0'

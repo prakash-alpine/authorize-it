@@ -1,5 +1,5 @@
 require 'faker'
-require 'shoulda-matchers'
+require 'shoulda/matchers'
 require 'factory_girl'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'

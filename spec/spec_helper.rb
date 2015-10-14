@@ -1,6 +1,6 @@
 #require File.dirname(__FILE__) + '/../authorize-it'
 #require 'active_record'
-require 'shoulda-matchers'
+require 'shoulda/matchers'
 require 'factory_girl'
 require 'database_cleaner'
 require 'faker'

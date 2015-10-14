@@ -3,24 +3,18 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
- * load index.css from vendor/assets/stylesheets folder
- *= require index.css
- * require_tree .
- */
-
-.main-header a {
-  float: left;
-  padding: 15px;
-}
-
-.form-control-feedback {
-  top: 0px !important
-}
+ *= require admin_lte/bootstrap.min
+ *= require fonts/font-awesome/font-awesome.min
+ *= require fonts/ionicons/ionicons
+ *= require admin_lte/authorize_it
+ *= require admin_lte/skins/skin-blue
+ *= require admin_lte/icheck/square/blue
+ * require bootstrap-dialog.css
+*/

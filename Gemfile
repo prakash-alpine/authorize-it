@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # respond_with and the class-level respond_to methods have been extracted to the responders gem.
 # To use them, simply add gem 'responders', '~> 2.0' to your Gemfile
 gem 'responders', '~> 2.0'
+# Devise is a flexible authentication solution for Rails based on Warden
+# https://github.com/plataformatec/devise
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

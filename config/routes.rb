@@ -69,6 +69,8 @@
 
 Rails.application.routes.draw do
 
+  devise_for :users
+
   namespace :authorize_it do
     resources :operations do
       get 'delete', on: :member

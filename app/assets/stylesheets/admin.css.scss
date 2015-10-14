@@ -11,8 +11,8 @@
  * file per style scope.
  *
  *= require_self
- * load index.css from vendor/assets/stylesheets folder
- *= require index.css
+ * load admin.css from vendor/assets/stylesheets folder
+ *= require admin_lte.css
  * require_tree .
  */
 
@@ -23,4 +23,8 @@
 
 .form-control-feedback {
   top: 0px !important
+}
+
+.register-box {
+  width: 600px !important;
 }
