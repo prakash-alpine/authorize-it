@@ -1,7 +1,7 @@
 
 json.set! 'draw', @draw
 json.set! 'recordsTotal', @total
-json.set! 'recordsFiltered', @total
+json.set! 'recordsFiltered', @filteredCount
 json.data do
   json.array! @users do |user|
     json.first_name user.first_name

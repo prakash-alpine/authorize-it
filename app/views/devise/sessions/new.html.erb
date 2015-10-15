@@ -5,6 +5,11 @@
     <div class="row">
       <div class="col-sm-12">
         <div id="form_error_messages">
+          <% if flash[:alert] -%>
+              <div class="alert alert-danger" role="alert">
+                <%= flash[:alert] %>
+              </div>
+          <% end -%>
           <% if resource.errors.any? %>
             <%= render 'authorize_it/shared/form_errors', :messages => resource.errors.full_messages %>
           <% end %>
@@ -12,11 +17,13 @@
       </div>
     </div>
     <div class='form-group has-feedback'>
+      <label for=''>Username</label>
       <%= f.text_field :username, class: 'form-control',  placeholder: 'username', 'data-error':'Invalid user name.', required: true, autofocus: true %>
       <span class="glyphicon glyphicon-user form-control-feedback"></span>
       <span class="help-block with-errors"></span>
     </div>
     <div class='form-group has-feedback'>
+      <label for=''>Password</label>
       <%= f.password_field :password, class: 'form-control' , 'data-minlength': '8', placeholder: 'Password', 'data-error':'password is required.',required: true, autocomplete: "off" %>
       <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       <span class="help-block with-errors"></span>

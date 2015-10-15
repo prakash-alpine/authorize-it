@@ -40,4 +40,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles, -> { uniq }
   has_many :application_objects
 
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end

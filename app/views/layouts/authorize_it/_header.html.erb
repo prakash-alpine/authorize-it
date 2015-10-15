@@ -214,18 +214,19 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= image_tag('user2-160x160.jpg', :alt => '[User]', :class => 'user-image') %>
-            <span class="hidden-xs">Alexander Pierce</span>
+            <span class="hidden-xs"><%= current_user.full_name %></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
               <%= image_tag('user2-160x160.jpg', :alt => '[User]', :class => 'user-image') %>
               <p>
-                Alexander Pierce - Web Developer
+                <%= current_user.full_name %> - Web Developer
                 <small>Member since Nov. 2012</small>
               </p>
             </li>
             <!-- Menu Body -->
+            <!--
             <li class="user-body">
               <div class="row">
                 <div class="col-xs-4 text-center">
@@ -238,15 +239,20 @@
                   <a href="#">Friends</a>
                 </div>
               </div>
-              <!-- /.row -->
             </li>
+            -->
+            <!-- /.row -->
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <%= link_to authorize_it_user_path(current_user), remote: true do %>
+                    <span class="btn btn-default btn-flat">Profile</span>
+                <% end %>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                    <span class="btn btn-default btn-flat">Sign out</span>
+                <% end %>
               </div>
             </li>
           </ul>
